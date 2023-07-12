@@ -13,8 +13,8 @@ capitalize}}{% endcapture %}
 	<main>
 		<nav>
 			<h1>{{page_title}}</h1>
-			{% github_edit_link "edit" %}
-			<a href="#chat">Comments</a>
+			{% if page.title != "404"%}{% github_edit_link "edit" %}
+			<a href="#chat">Comments</a>{% endif %}
 		</nav>
 		<article id="page-content">
 			{{content}}
