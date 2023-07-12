@@ -39,5 +39,11 @@ exclude:
 
 
 plugins:
+  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-redirect-to
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-avatar
+  - jemoji
+  - jekyll-mention
