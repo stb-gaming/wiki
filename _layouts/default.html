@@ -9,27 +9,40 @@ capitalize}}{% endcapture %}
 	<link rel="stylesheet" href="{{site.url}}/assets/css/style.css">
 
 <body>
-	{% include header.html %}
-	<main>
-		<nav>
-			<h1>{{page_title}}</h1>
-			{% if page.title != "404"%}{% github_edit_link "edit" %}
-			<a href="#chat">Comments</a>{% endif %}
-		</nav>
-		<article id="page-content">
-			{{content}}
-		</article>
-		{% if page.title != "404"%}
-		<section id="chat" comments>
-			<h2>Comments</h2>
-			<script src="https://giscus.app/client.js" data-repo="stb-gaming/wiki" data-repo-id="R_kgDOJ6tTig"
-				data-category="Wiki" data-category-id="DIC_kwDOJ6tTis4CX1t_" data-mapping="title" data-strict="0"
-				data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
-				data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
-				</script>
-		</section>
-		{% endif %}
-	</main>
+	<div class="container">
+		{% include header.html %}{% include sidebar.html %}
+		<main>
+			<nav>
+				{% capture edit_link %}{% github_edit_link %}{% endcapture %}
+
+				<h1>{{page_title}}</h1>
+				{% if page.title != "404"%}
+				<a href="{{edit_link}}">Edit</a>
+				<a href="{{edit_link|replace:'edit','commits'}}">History</a>
+				<a href="#chat">Comments</a>
+				{% endif %}
+			</nav>
+			<article id="page-content">
+				{{content}}
+
+				{% if page.list %}
+				{% include list.html collection=page.list.collection filter=page.list.filter limit=page.list.limit
+				items=page.list.items %}
+				{% endif %}
+			</article>
+			{% if page.title != "404"%}
+			<section id="chat">
+				<h2>Comments</h2>
+				<script src="https://giscus.app/client.js" data-repo="stb-gaming/wiki" data-repo-id="R_kgDOJ6tTig"
+					data-category="Wiki" data-category-id="DIC_kwDOJ6tTis4CX1t_" data-mapping="title" data-strict="0"
+					data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+					data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+					</script>
+			</section>
+			{% endif %}
+		</main>
+		<footer>Hello world</footer>
+	</div>
 </body>
 </head>
 

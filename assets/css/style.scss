@@ -1,0 +1,168 @@
+---
+---
+
+@font-face {
+	font-family: "Zurich";
+	src: url("https://stb-gaming.github.io/assets/fonts/Zurich Bold Extended.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "ZurichTV";
+	src: url("https://stb-gaming.github.io/assets/fonts/Zurich Bold Condensed.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SkyLogo";
+	src: url("https://stb-gaming.github.io/assets/fonts/SKYfontThick.ttf") format("truetype");
+}
+
+$sky_font_header: "Zurich";
+$sky_font_body: "ZurichTV";
+$sky_blue_light: #0036b2;
+$sky_blue_dark: #002083;
+$sky_yellow_light: #fcda15;
+$sky_yellow_dark: #ffaa02;
+
+* {
+	font-family: $sky_font_body;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+body {
+	background: radial-gradient(circle at 0px 25%, #b0bfde 0%, transparent 20%) 0px 25%,
+		radial-gradient(circle at 110% 50%, #b0bfde 0%, transparent 30%) 100% 50%,
+		radial-gradient(circle at 25% 120%, #b0bfde 0%, transparent 40%) 25% 100%,
+		radial-gradient(circle at bottom left, #659df2 70%, #2973fa 95%);
+}
+
+a {
+	&,
+	&:visited {
+		color: $sky_blue_light;
+	}
+	&:hover {
+	}
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $sky_font_header;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 24px;
+	margin: 0;
+}
+
+.container {
+	width: 1200px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 24px;
+	display: grid;
+	grid-template-columns: 20% auto;
+	grid-template-areas:
+		"header header"
+		"sidebar main"
+		"sidebar footer";
+}
+
+header {
+	grid-area: header;
+}
+
+%nice-header {
+	background-color: $sky_yellow_light;
+	color: $sky_blue_light;
+	a {
+		&,
+		&:visited,
+		&:hover,
+		&focus {
+			color: inherit;
+		}
+	}
+}
+
+%content-box {
+	padding: 20px;
+}
+
+section {
+	color: white;
+	background-color: $sky_blue_light;
+	.content {
+		@extend %content-box;
+	}
+
+	a {
+		&,
+		&:visited,
+		&:hover,
+		&focus {
+			color: $sky_yellow_light;
+		}
+	}
+}
+
+section h2 {
+	@extend %nice-header;
+}
+
+main {
+	grid-area: main;
+	display: flex;
+	flex-flow: column;
+	gap: 24px;
+	nav,
+	section h2 {
+		@extend %nice-header;
+		display: grid;
+		$button_count: 3;
+		grid-template-columns: 100%- (10% * $button_count) repeat($button_count, 10%);
+	}
+}
+
+article {
+	background-color: white;
+	@extend %content-box;
+}
+
+aside {
+	grid-area: sidebar;
+	display: flex;
+	flex-flow: column;
+	gap: 24px;
+	section .content {
+		display: flex;
+		flex-flow: column;
+	}
+}
+footer {
+	grid-area: footer;
+}
+
+.compatibility-matrix {
+	.good {
+		background-color: rgb(161, 187, 149);
+	}
+	.maybe {
+		background-color: orange;
+	}
+	.bad {
+		background-color: red;
+	}
+}

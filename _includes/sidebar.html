@@ -1,0 +1,30 @@
+<aside>
+	<section>
+		<h2>Discord</h2>
+		{% include discord.html id="1098329048079417404" %}
+	</section>
+	{% for sidebar in site.data.sidebar %}
+	<section>
+		{% if sidebar.title %}
+		<h2>{{sidebar.title}}</h2>
+		{% endif %}
+		{% if sidebar.text %}
+		<p>{{sidebar.text}}</p>
+		{% endif %}
+		{% if sidebar.list %}
+		<ul>
+			{% for item in sidebar.list %}
+			<li>
+				{% if item.href or item.url %}
+				<a
+					href="{% if item.local %}{{site.url}}/{%endif%}{{item.href|default:item.url}}">{{item.title|default:item.text}}</a>
+				{% else %}
+				{{item.title|default:item.text|default:item}}
+				{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</section>
+	{% endfor %}
+</aside>

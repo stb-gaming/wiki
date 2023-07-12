@@ -1,0 +1,23 @@
+- title: Tools
+  list:
+  - title: Edit Sidebar
+    href: https://github.com/stb-gaming/wiki/edit/master/_data.sidebar.yml
+  - title: History
+    href: https://github.com/stb-gaming/stb-gaming.github.io/commits/master
+  - title: Special Pages
+    local: yes
+    href: Special:SpecialPages
+  - title: All Pages
+    local: yes
+    href: Special:Pages
+
+- title: Other Links
+  list:
+  - title: STB Home
+    href: https://stb-gaming.github.io/
+  - title: Sky Games
+    href: https://stb-gaming.github.io/sky-games/
+  - title: Sky Gamestar wiki
+    href: https://sky-gamestar.fandom.com/wiki/Sky_Gamestar_Wiki
+  - title: STB Gaming Discord
+    href: https://discord.gg/bg3EvUvmrp
