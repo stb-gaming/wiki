@@ -19,6 +19,7 @@ capitalize}}{% endcapture %}
 		<article id="page-content">
 			{{content}}
 		</article>
+		{% if page.title != "404"%}
 		<section id="chat" comments>
 			<h2>Comments</h2>
 			<script src="https://giscus.app/client.js" data-repo="stb-gaming/wiki" data-repo-id="R_kgDOJ6tTig"
@@ -27,6 +28,7 @@ capitalize}}{% endcapture %}
 				data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
 				</script>
 		</section>
+		{% endif %}
 	</main>
 </body>
 </head>
