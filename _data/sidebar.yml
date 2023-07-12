@@ -1,7 +1,7 @@
 - title: Tools
   list:
   - title: Edit Sidebar
-    href: https://github.com/stb-gaming/wiki/edit/master/_data.sidebar.yml
+    href: https://github.com/stb-gaming/wiki/edit/master/_data/sidebar.yml
   - title: History
     href: https://github.com/stb-gaming/stb-gaming.github.io/commits/master
   - title: Special Pages
