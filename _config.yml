@@ -3,7 +3,7 @@ title: STG Gaming Wiki
 url: https://stb-gaming.github.io/wiki
 repository: stb-gaming/wiki
 permalink: pretty
-home: Main Page
+home: Main_Page
 
 
 collections:
@@ -45,3 +45,4 @@ exclude:
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-redirect-to
