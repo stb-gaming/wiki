@@ -4,7 +4,6 @@ url: https://stb-gaming.github.io/wiki
 repository: stb-gaming/wiki
 permalink: pretty
 home: Main_Page
-base_url: /wiki
 
 
 collections:

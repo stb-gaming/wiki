@@ -1,6 +1,5 @@
 ---
 title: Main Page
-redirect_from: /
 ---
 welcome to this wiki
 
