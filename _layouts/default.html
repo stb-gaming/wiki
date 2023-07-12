@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% capture page_title%}{% if page.collection!="Main"%}{{page.collection| capitalize}}: {%endif%}{{page.title|
+capitalize}}{% endcapture %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>{{page_title}} | {{site.title}}</title>
+	<link rel="stylesheet" href="{{site.url}}/assets/css/style.css">
+
+<body>
+	{% include header.html %}
+	<main>
+		<nav>
+			<h1>{{page_title}}</h1>
+			{% github_edit_link "edit" %}
+			<a href="#chat">Comments</a>
+		</nav>
+		<article id="page-content">
+			{{content}}
+		</article>
+		<section id="chat" comments>
+			<h2>Comments</h2>
+			<script src="https://giscus.app/client.js" data-repo="stb-gaming/wiki" data-repo-id="R_kgDOJ6tTig"
+				data-category="Main" data-category-id="DIC_kwDOJ6tTis4CX1t_" data-mapping="title" data-strict="0"
+				data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+				data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+				</script>
+		</section>
+	</main>
+</body>
+</head>
+
+</html>

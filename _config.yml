@@ -1,0 +1,47 @@
+title: STG Gaming Wiki
+
+url: https://stb-gaming.github.io/wiki
+repository: stb-gaming/wiki
+permalink: pretty
+home: Main Page
+
+
+collections:
+  Main:
+    output: true
+    permalink: /:title
+  Category:
+    output: true
+    permalink: /Category::title
+  Special:
+    output: true
+    permalink: /Special::title
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: Category
+    values:
+      layout: category
+
+exclude:
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+  - LICENSE
+  - plan.md
+  - README.md
+  - gulpfile.js
+  - gemfiles
+  - src
+  - package.json
+  - package-lock.json
+
+
+plugins:
+  - jekyll-redirect-from
